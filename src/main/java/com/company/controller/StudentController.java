@@ -4,10 +4,9 @@ import com.company.model.StudentModel;
 import com.company.service.StudentService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,9 +15,9 @@ import java.util.List;
  * @Description {}
  * @Date 2019/6/25 15:59
  */
-@Api(value = "测试样例")
 @RestController
 @RequestMapping(value = {"/api/v1/students"})
+@Api(description = "学生信息相关接口", tags = "学生")
 public class StudentController {
 
     @Autowired
@@ -32,7 +31,7 @@ public class StudentController {
 
     @ApiOperation(value = "保存学生信息")
     @RequestMapping(method = RequestMethod.POST)
-    public void saveStudentMessage() {
+    public void saveStudentMessage(@ApiParam(name = "studentModel", value = "学生实体", required = true) @RequestBody StudentModel studentModel) {
 
     }
 }
