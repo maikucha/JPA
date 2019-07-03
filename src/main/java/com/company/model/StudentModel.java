@@ -18,11 +18,11 @@ public class StudentModel{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(name = "学号")
+    @ApiModelProperty(value = "学号")
     public Integer id;
-    @ApiModelProperty(name = "姓名")
+    @ApiModelProperty(value = "姓名")
     public String name;
-    @ApiModelProperty(name = "年龄")
+    @ApiModelProperty(value = "年龄")
     public Integer age;
 
     public Integer getId() {
